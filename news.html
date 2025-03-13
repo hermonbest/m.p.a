@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Events - Merciful Paradise Academy</title>
+  <meta name="description" content="Stay updated with the latest news, events, and activities at Merciful Paradise Academy.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .news-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      background-color: white;
+    }
+    
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .news-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    
+    .news-content {
+      padding: 1.5rem;
+    }
+    
+    .news-date {
+      display: inline-block;
+      background-color: var(--primary-light);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .news-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .event-list {
+      list-style: none;
+    }
+    
+    .event-item {
+      display: flex;
+      margin-bottom: 1.5rem;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .event-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .event-date {
+      background-color: var(--primary);
+      color: white;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 100px;
+    }
+    
+    .event-day {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .event-month {
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+    
+    .event-details {
+      padding: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .event-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .event-time, .event-location {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.3rem;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+    }
+    
+    .event-time i, .event-location i {
+      margin-right: 0.5rem;
+      color: var(--secondary);
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+    
+    .pagination a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+      border-radius: 50%;
+      background-color: white;
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .pagination a:hover, .pagination a.active {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      .event-item {
+        flex-direction: column;
+      }
+      
+      .event-date {
+        width: 100%;
+        padding: 1rem;
+        flex-direction: row;
+      }
+      
+      .event-day {
+        margin-right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">M.P.A</a>
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="news.html" class="active">News & Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- News Header -->
+  <div class="about-header">
+    <div class="container">
+      <h1 class="hero-title fade-in">News & Events</h1>
+      <p class="hero-subtitle fade-in delay-1">Stay Updated with Merciful Paradise Academy</p>
+    </div>
+  </div>
+
+  <!-- Latest News Section -->
+  <section class="about-content">
+    <div class="container">
+      <div class="section-title">
+        <h2>Latest News</h2>
+      </div>
+      <div class="news-grid">
+        <!-- News Item 1 -->
+        <div class="news-card animate-on-scroll" id="science-fair">
+          <img src="images/download (2).jpg" alt="Science Fair" class="news-img">
+          <div class="news-content">
+            <span class="news-date">May 15, 2023</span>
+            <h3 class="news-title">Annual Science Fair Showcases Student Innovation</h3>
+            <p>Our students impressed judges and visitors alike with their innovative projects at this year's Annual Science Fair. From renewable energy solutions to biodegradable plastics, the creativity and scientific rigor demonstrated by our students was outstanding.</p>
+            <p style="margin-top: 1rem;">The grand prize was awarded to 10th grader Emma Johnson for her project on water purification using locally sourced materials.</p>
+            <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Read More</a>
+          </div>
+        </div>
+        
+        <!-- News Item 2 -->
+        <div class="news-card animate-on-scroll delay-1" id="sports-day">
+          <img src="images/private-school-oxfordshire-sports-day.jpg" alt="Sports Day" class="news-img">
+          <div class="news-content">
+            <span class="news-date">April 28, 2023</span>
+            <h3 class="news-title">Sports Day Celebration Promotes Physical Fitness</h3>
+            <p>Students participated in various sports activities during our annual Sports Day, promoting physical fitness and teamwork. The event featured track and field competitions, team sports, and fun recreational activities for all age groups.</p>
+            <p style="margin-top: 1rem;">The Blue House emerged as the overall champion, with outstanding performances in relay races and basketball.</p>
+            <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Read More</a>
+          </div>
+        </div>
+        
+        <!-- News Item 3 -->
+        <div class="news-card animate-on-scroll delay-2" id="academic-awards">
+          <img src="images/award.jpg" alt="Academic Awards" class="news-img">
+          <div class="news-content">
+            <span class="news-date">April 10, 2023</span>
+            <h3 class="news-title">Academic Excellence Awards Ceremony</h3>
+            <p>Congratulations to our students who received recognition for their outstanding academic achievements this semester. The ceremony honored students who demonstrated exceptional performance in various subjects and maintained high GPAs.</p>
+            <p style="margin-top: 1rem;">Special recognition was given to our National Merit Scholarship finalists and recipients of prestigious academic competitions.</p>
+            <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Read More</a>
+          </div>
+        </div>
+        
+        <!-- News Item 4 -->
+        <div class="news-card animate-on-scroll">
+          <img src="images/art.jpg" alt="Art Exhibition" class="news-img">
+          <div class="news-content">
+            <span class="news-date">March 22, 2023</span>
+            <h3 class="news-title">Student Art Exhibition Opens to Community</h3>
+            <p>The annual student art exhibition opened this week, showcasing the incredible talent and creativity of our art students. The exhibition features paintings, sculptures, photography, and digital art created throughout the academic year.</p>
+            <p style="margin-top: 1rem;">The exhibition is open to the public until April 5th in the school's art gallery.</p>
+            <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Read More</a>
+          </div>
+        </div>
+        
+        <!-- News Item 5 -->
+        <div class="news-card animate-on-scroll delay-1">
+          <img src="images/debate-competition.jpg" alt="Debate Competition" class="news-img">
+          <div class="news-content">
+            <span class="news-date">March 15, 2023</span>
+            <h3 class="news-title">Debate Team Wins Regional Championship</h3>
+            <p>Our debate team emerged victorious at the Regional Debate Championship, demonstrating exceptional research, argumentation, and public speaking skills. The team will now advance to the state-level competition next month.</p>
+            <p style="margin-top: 1rem;">Special congratulations to team captain Michael Chen, who was named Best Speaker of the tournament.</p>
+            <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Read More</a>
+          </div>
+        </div>
+        
+        <!-- News Item 6 -->
+        <div class="news-card animate-on-scroll delay-2">
+          <img src="images/Top-8-Benefits-of-Community-Service-for-Students.jpg" alt="Community Service" class="news-img">
+          <div class="news-content">
+            <span class="news-date">February 28, 2023</span>
+            <h3 class="news-title">Students Lead Community Service Initiative</h3>
+            <p>A group of dedicated students organized a community service initiative to clean up local parks and plant trees. The project, which was part of our school's commitment to environmental stewardship, involved over 100 student volunteers.</p>
+            <p style="margin-top: 1rem;">The initiative resulted in the planting of 50 new trees and the collection of over 200 pounds of litter.</p>
+            <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Read More</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pagination
+      <div class="pagination">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#"><i class="fas fa-chevron-right"></i></a>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- Upcoming Events Section -->
+  <section style="background-color: #f0f4f8;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Upcoming Events</h2>
+      </div>
+      <ul class="event-list">
+        <!-- Event 1 -->
+        <li class="event-item animate-on-scroll">
+          <div class="event-date">
+            <span class="event-day">25</span>
+            <span class="event-month">May</span>
+          </div>
+          <div class="event-details">
+            <h3 class="event-title">Parent-Teacher Conference</h3>
+            <p>An opportunity for parents to meet with teachers and discuss student progress and development.</p>
+            <div class="event-time">
+              <i class="fas fa-clock"></i>
+              <span>2:00 PM - 7:00 PM</span>
+            </div>
+            <div class="event-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>School Campus - All Classrooms</span>
+            </div>
+          </div>
+        </li>
+        
+        <!-- Event 2 -->
+        <li class="event-item animate-on-scroll delay-1">
+          <div class="event-date">
+            <span class="event-day">10</span>
+            <span class="event-month">Jun</span>
+          </div>
+          <div class="event-details">
+            <h3 class="event-title">End of Year Concert</h3>
+            <p>Join us for a celebration of music and performing arts featuring performances by our talented students.</p>
+            <div class="event-time">
+              <i class="fas fa-clock"></i>
+              <span>6:00 PM - 8:30 PM</span>
+            </div>
+            <div class="event-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>School Auditorium</span>
+            </div>
+          </div>
+        </li>
+        
+        <!-- Event 3 -->
+        <li class="event-item animate-on-scroll delay-2">
+          <div class="event-date">
+            <span class="event-day">15</span>
+            <span class="event-month">Jun</span>
+          </div>
+          <div class="event-details">
+            <h3 class="event-title">Graduation Ceremony</h3>
+            <p>Celebrating the achievements of our graduating class as they prepare to embark on their next chapter.</p>
+            <div class="event-time">
+              <i class="fas fa-clock"></i>
+              <span>10:00 AM - 12:30 PM</span>
+            </div>
+            <div class="event-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>City Convention Center</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="#" class="btn btn-primary">View Full Calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Stay Updated</h2>
+      </div>
+      <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <div class="card-content">
+          <p style="margin-bottom: 1.5rem;">Subscribe to our newsletter to receive the latest news and updates from Merciful Paradise Academy.</p>
+          <form style="display: flex; gap: 0.5rem; max-width: 500px; margin: 0 auto;">
+            <input type="email" placeholder="Your Email Address" required style="flex-grow: 1; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p style="font-size: 0.8rem; margin-top: 1rem; color: #666;">We respect your privacy and will never share your information with third parties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- School Calendar CTA -->
+  <section style="background: linear-gradient(rgba(42, 77, 143, 0.9), rgba(42, 77, 143, 0.9)), url('/placeholder.svg?height=400&width=1200'); background-size: cover; background-position: center; color: var(--text-light); text-align: center; padding: 4rem 0;">
+    <div class="container">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">School Calendar</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">Access our full academic calendar to stay informed about important dates, holidays, and school events throughout the year.</p>
+      <a href="#" class="btn btn-primary">View Calendar</a>
+      <a href="#" class="btn btn-outline" style="margin-left: 1rem;">Download PDF</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Merciful Paradise Academy</h3>
+          <p>"Cultivating the Leaders of Tomorrow: Inspiring Youth to Dream, Learn, and Achieve"</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="news.html">News & Events</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Information</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 123 School Street, City, State</li>
+            <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+            <li><i class="fas fa-envelope"></i> info@mercyacademy.edu</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Merciful
+          
+          
+          Paradise Academy. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
+
