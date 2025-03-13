@@ -137,15 +137,15 @@ nav {
 /* Hero Section */
 .hero {
   height: 100vh;
-  background:#e0e0e0;
+  background:#181111;
   background-size: cover;
   background-position: center;
-  color:#545452;
+  color:#d2ebfc;
   display: flex;
   align-items: center;
   text-align: center;
   padding-top: 80px;
-  /* background-image: url(/images/photo-1588345921523-c2dcdb7f1dcd.avif); */
+  background-image: url(../images/elemenntary\ kids.png);
 }
 
 .hero-content {
