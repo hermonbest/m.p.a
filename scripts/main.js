@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const counter = entry.target
-            const target = Number.parseInt(counter.getAttribute("data-target"))
+            const target = parseInt(counter.getAttribute("data-target"))
             let count = 0
             const updateCounter = () => {
               const increment = target / 100

@@ -74,12 +74,12 @@ header.scrolled {
 }
 
 .logo {
+
   font-size: 2.3rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--text-light);
   transition: var(--transition);
-  text-shadow: #000000 3px 3px 5px;
 }
 
 .logo:hover {
@@ -166,7 +166,7 @@ nav {
   font-size: 1.5rem;
   margin-bottom: 2rem;
   font-weight: 300;
-  color: #ffc9c7;
+  color: #ffffff;
 }
 
 /* Buttons */
