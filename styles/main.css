@@ -87,23 +87,23 @@ header.scrolled {
 }
 
 /* Navigation */
-nav {
+navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav-links {
+.navlinks {
   display: flex;
   list-style: none;
 }
 
-.nav-links li {
+.navlinks li {
   margin-left: 1.5rem;
 }
-.nav-links li {
+.navlinks li {
 }
-.nav-links a {
+.navlinks a {
   display: inline-block;
   color: var(--text-light);
   text-decoration: none;
@@ -114,7 +114,7 @@ nav {
   position: relative;
 }
 
-.nav-links a:after {
+.navlinks a:after {
   content: "";
   position: absolute;
   width: 0;
@@ -125,11 +125,11 @@ nav {
   transition: var(--transition);
 }
 
-.nav-links a:hover:after {
+.navlinks a:hover:after {
   width: 100%;
 }
 
-.nav-links a.active:after {
+.navlinks a.active:after {
   width: 100%;
 }
 
@@ -499,7 +499,7 @@ footer {
     display: block;
   }
 
-  .nav-links {
+  .navlinks {
     position: fixed;
     top: 70px;
     left: -100%;
@@ -513,10 +513,10 @@ footer {
     transition: var(--transition);
   }
 
-  .nav-links.active {
+  .navlinks.active {
     left: 0;
   }
-  .nav-links li {
+  .navlinks li {
     margin: 1rem 0;
   }
 
@@ -552,4 +552,51 @@ footer {
 }
 @media (max-width:950px) and (min-width:768px) {
   .logo{display: none;}
+}
+.mission-vision {
+  padding: 3rem 0;
+}
+
+.mission-vision .container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.mission-vision .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -0.75rem;
+}
+
+.mission-vision .col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0.75rem;
+}
+
+.mission-vision .box {
+  padding: 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.mission-vision .box.bg-dark {
+  background-color: #343a40;
+}
+
+.mission-vision h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.mission-p {
+  margin-top: 3rem;
+  padding: 0 3rem;
+}
+
+.mission-p p {
+  font-weight: bold;
 }

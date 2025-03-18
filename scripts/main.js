@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Mobile Navigation Toggle
   const hamburger = document.querySelector(".hamburger")
-  const navLinks = document.querySelector(".nav-links")
+  const navLinks = document.querySelector(".navlinks")
 
   if (hamburger) {
     hamburger.addEventListener("click", () => {
