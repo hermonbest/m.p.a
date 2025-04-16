@@ -466,7 +466,7 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1020px) {
   .hamburger {
     display: block;
   }
