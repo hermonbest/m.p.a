@@ -523,4 +523,5 @@ footer {
     right: auto;
   }
 }
-
+.testimonial-slider { height: 300px; }
+.card { text-align: center; padding: 2rem; height: 250px; }

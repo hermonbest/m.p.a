@@ -47,81 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
   animateElements.forEach((element) => {
     observer.observe(element);
   });
-
-  // Testimonial Slider
-  const testimonials = document.querySelector(".testimonial-slider");
-  let currentSlide = 0;
-
-  if (testimonials) {
-    const slides = testimonials.querySelectorAll(".testimonial");
-    const totalSlides = slides.length;
-    const nextBtn = document.querySelector(".testimonial-next");
-    const prevBtn = document.querySelector(".testimonial-prev");
-
-    // Clone first and last slides for infinite effect
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[totalSlides - 1].cloneNode(true);
-
-    testimonials.appendChild(firstClone);
-    testimonials.insertBefore(lastClone, slides[0]);
-
-    const allSlides = testimonials.querySelectorAll(".testimonial");
-    const totalAllSlides = allSlides.length;
-
-    const showSlide = (index) => {
-      testimonials.style.transition = "transform 0.5s ease";
-      testimonials.style.transform = `translateX(${-100 * (index + 1)}%)`;
-    };
-
-    // Initialize slider
-    testimonials.style.transform = `translateX(-100%)`;
-    showSlide(currentSlide);
-
-    // Next button
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        currentSlide++;
-        showSlide(currentSlide);
-        if (currentSlide >= totalSlides) {
-          setTimeout(() => {
-            testimonials.style.transition = "none";
-            currentSlide = 0;
-            showSlide(currentSlide);
-          }, 500);
-        }
-      });
-    }
-
-    // Previous button
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        currentSlide--;
-        showSlide(currentSlide);
-        if (currentSlide < 0) {
-          setTimeout(() => {
-            testimonials.style.transition = "none";
-            currentSlide = totalSlides - 1;
-            showSlide(currentSlide);
-          }, 500);
-        }
-      });
-    }
-
-    // Auto slide
-    setInterval(() => {
-      currentSlide++;
-      showSlide(currentSlide);
-      if (currentSlide >= totalSlides) {
-        setTimeout(() => {
-          testimonials.style.transition = "none";
-          currentSlide = 0;
-          showSlide(currentSlide);
-        }, 500);
-      }
-    }, 5000);
-  }
-
-  // Counter animation for stats
+  new Swiper('.testimonial-slider', {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: { delay: 5000, disableOnInteraction: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    pagination: { el: '.swiper-pagination', clickable: true }
+  });
+// Counter animation for stats
   const counters = document.querySelectorAll(".counter");
 
   if (counters.length > 0) {
